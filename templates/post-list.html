@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section>
+{{ section.content | safe }}
+</section>
+
+<ol reversed>
+  {% for page in section.pages %}
+  <li>
+    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    <span>{{ page.date }}</span>
+    <span>~{{ page.word_count }} words</span>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}
